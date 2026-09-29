@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT165-Week2-P4</title>
+</head>
+<body>
+    <header>
+        <h1>Week 2 - Practice 4</h1>
+        <h2>Practice 4: Forms Validation</h2>
+    </header>
+    <main>
+        <form>
+            <p>
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </p>
+            <p>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" minlength="6" maxlength="8" required>
+            </p>
+            <p>
+                <label for="dateofbirth"></label>Date of Birth:</label>
+                <input type="date" id="dateofbirth" name="dateofbirth">
+            </p>
+            <p>
+                <button type="submit">Submit</button>
+            </p>
+        </form>
+    </main>
+    <footer> &copy; 2026 Monroe University</footer>
+</body>
+</html>
