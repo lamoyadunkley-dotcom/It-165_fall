@@ -1,0 +1,20 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const loadComponent = async (placeholderId, filePath) => {
+    try {
+      const response = await fetch(filePath);
+      if (response.ok) {
+        const html = await response.text();
+        document.getElementById(placeholderId).innerHTML = html;
+      } else {
+        console.error(`Error loading ${filePath}: ${response.statusText}`);
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  };
+
+  // Load templates into their respective placeholder elements
+  loadComponent('header-placeholder', 'components/header.html');
+  loadComponent('nav-placeholder', 'components/navbar.html');
+  loadComponent('footer-placeholder', 'components/footer.html');
+});
