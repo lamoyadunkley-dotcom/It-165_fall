@@ -1,0 +1,62 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light;
+  --ink: #172033;
+  --muted: #596579;
+  --surface: #ffffff;
+  --page: #f3f6fb;
+  --accent: #4b5ee8;
+}
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+.page { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 24px; }
+.hero { padding: 32px; border-radius: 24px; color: white; background: linear-gradient(120deg, #202b55, #5665ed); }
+.eyebrow { font-size: .78rem; font-weight: 800; letter-spacing: .16em; opacity: .8; }
+h1 { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; margin: 8px 0 12px; }
+.hero p:last-child { margin-bottom: 0; max-width: 620px; }
+.section { margin-top: 34px; }
+.section h2 { font-size: clamp(1.35rem, 3vw, 1.8rem); margin-bottom: 18px; }
+.card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.wrapper-card { min-height: 190px; padding: 24px; background: var(--surface); border: 1px solid #e2e7f0; border-radius: 18px; box-shadow: 0 4px 12px rgb(24 38 72 / 7%); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.wrapper-card:hover, .wrapper-card:focus-within { transform: translateY(-8px) scale(1.02); box-shadow: 0 16px 32px rgb(24 38 72 / 18%); }
+.card-number { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: #e9ecff; color: #3545b6; font-weight: 800; }
+.wrapper-card h3 { margin: 14px 0 6px; }
+.wrapper-card p, .animation-panel p, .hint, .reading p { color: var(--muted); }
+.animation-panel { display: flex; align-items: center; gap: 26px; padding: 26px; background: white; border: 1px solid #e2e7f0; border-radius: 18px; }
+.orbit-shape { width: 100px; height: 100px; flex: 0 0 100px; border: 7px solid #4b5ee8; border-radius: 26px; background: linear-gradient(135deg, #e8ebff, #d8fbf4); animation: milestone-spin 4s ease-in-out infinite; }
+@keyframes milestone-spin {
+  0% { transform: rotate(0deg); border-color: #4b5ee8; border-radius: 18px; }
+  50% { transform: rotate(180deg); border-color: #19a88b; border-radius: 50%; }
+  100% { transform: rotate(360deg); border-color: #ef7b54; border-radius: 18px; }
+}
+.slideshow { overflow: hidden; background: white; border: 1px solid #e2e7f0; border-radius: 20px; box-shadow: 0 8px 24px rgb(24 38 72 / 8%); }
+#slide-image { display: block; width: 100%; aspect-ratio: 16 / 7; object-fit: cover; background: #e7eaf5; }
+.slide-caption { padding: 16px 22px 4px; }
+#slide-count { color: var(--accent); font-size: .85rem; font-weight: 800; }
+.slide-caption h3 { margin: 4px 0; }
+.slide-controls { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 22px 22px; }
+button { border: 0; border-radius: 10px; padding: 11px 16px; color: white; background: #303e9e; font: inherit; font-weight: 700; cursor: pointer; }
+button:hover { background: #202b75; }
+button:focus-visible { outline: 3px solid #f1a94e; outline-offset: 3px; }
+.dots { display: flex; align-items: center; gap: 8px; }
+.dots button { width: 11px; height: 11px; padding: 0; border-radius: 50%; background: #c7cde0; }
+.dots button.active { background: var(--accent); transform: scale(1.25); }
+.hint { font-size: .9rem; }
+.reading { padding: 22px 26px; border-left: 4px solid var(--accent); border-radius: 0 14px 14px 0; background: white; }
+footer { padding-top: 30px; color: #7b8495; font-size: .85rem; }
+code { padding: 2px 5px; background: #eef0f7; border-radius: 5px; }
+@media (max-width: 720px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .animation-panel { align-items: flex-start; flex-direction: column; }
+  .slide-controls { flex-wrap: wrap; }
+  .dots { order: 3; width: 100%; justify-content: center; }
+  #slide-image { aspect-ratio: 4 / 3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}

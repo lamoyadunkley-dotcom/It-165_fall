@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Week 6 — CSS Effects & JavaScript Slideshow</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">WEEK 6 • WEB DEVELOPMENT</p>
+      <h1>CSS Effects & JavaScript Slideshow</h1>
+      <p>Practice transitions, keyframe animation, and array-index navigation.</p>
+    </header>
+
+    <section class="section" aria-labelledby="transitions-title">
+      <h2 id="transitions-title">4.1 CSS Transitions & 2D Transformations</h2>
+      <div class="card-grid">
+        <article class="wrapper-card">
+          <span class="card-number">01</span><h3>Lift</h3>
+          <p>Hover to move the card upward with a smooth 0.3-second transition.</p>
+        </article>
+        <article class="wrapper-card">
+          <span class="card-number">02</span><h3>Scale</h3>
+          <p>The card gently grows to <code>scale(1.02)</code> and gains elevation.</p>
+        </article>
+        <article class="wrapper-card">
+          <span class="card-number">03</span><h3>Elevation</h3>
+          <p>Directional movement, scale, and shadow work together on hover.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="keyframes-title">
+      <h2 id="keyframes-title">4.2 Complex CSS Keyframe Animations</h2>
+      <div class="animation-panel">
+        <div class="orbit-shape" role="img" aria-label="Animated rotating shape with changing border colors"></div>
+        <div>
+          <h3>Milestone animation</h3>
+          <p>The <code>@keyframes</code> timeline changes rotation and border color at 0%, 50%, and 100%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="slideshow-title">
+      <h2 id="slideshow-title">4.3 Vanilla JavaScript 5-Image Slideshow</h2>
+      <div class="slideshow" aria-roledescription="carousel" aria-label="Five image slideshow">
+        <img id="slide-image" src="images/image1.svg" alt="Abstract landscape, image 1 of 5">
+        <div class="slide-caption">
+          <span id="slide-count" aria-live="polite">Image 1 of 5</span>
+          <h3 id="slide-title">Colorful Horizon</h3>
+        </div>
+        <div class="slide-controls">
+          <button id="previous-button" type="button" aria-label="Previous image">← Previous</button>
+          <div class="dots" id="slide-dots" aria-label="Choose image">
+            <button type="button" data-index="0" aria-label="Show image 1" class="active"></button>
+            <button type="button" data-index="1" aria-label="Show image 2"></button>
+            <button type="button" data-index="2" aria-label="Show image 3"></button>
+            <button type="button" data-index="3" aria-label="Show image 4"></button>
+            <button type="button" data-index="4" aria-label="Show image 5"></button>
+          </div>
+          <button id="next-button" type="button" aria-label="Next image">Next →</button>
+        </div>
+      </div>
+      <p class="hint">Try Next on image 5 and Previous on image 1 to test wrap-around.</p>
+    </section>
+
+    <section class="section reading" aria-labelledby="reading-title">
+      <h2 id="reading-title">4.4 Reading Assignment</h2>
+      <p><strong>Required reading:</strong> <code>LWD_JavaScript</code> from the Week 6 course folder.</p>
+      <p>The assignment document was not available in the files I could access. Add the instructor-provided document here when you have it; do not replace it with an unrelated resource.</p>
+    </section>
+
+    <footer>Week 6 practice project • HTML, CSS, and vanilla JavaScript</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
